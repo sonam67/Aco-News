@@ -79,7 +79,7 @@ handleNextClick = async () => {
               <div className="container">
                   <div className="row">
                     {this.state.articles.map((element)=>{
-                    return <div className="col-md-4" key={element.url}>
+                    return <div className="col-md-4" style={{margin: '10px 0px'}} key={element.url}>
                               <NewsItems title={element.title?element.title.slice(0,45):""} description={element.description?element.description.slice(0,90):""} imgUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name}/>
                             </div>
                     })}
