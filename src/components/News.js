@@ -53,19 +53,30 @@ handleNextClick = async () => {
     this.updateNews()
 }
 
-  fetchMoreData = async() => {
-   this.setState({page:this.state.page+1})
-   const url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=da83255d6fcd4f7a9fa206d35782da4c &page=1&pageSize=${this.props.pageSize}`;
-    this.setState({loading: true})
-    let data= await fetch(url);
-    let parseData=await data.json()
-    console.log(parseData);
-    this.setState({
-      articles: this.state.articles.concat(parseData.articles),
-      totalResults: parseData.totalResults,
-      loading:false
-     })
-  };
+  fetchMoreData = async () => {
+  // Increment the page before making the API call
+  const nextPage = this.state.page + 1;
+
+  // Update the page state
+  this.setState({ page: nextPage });
+
+  // Construct the URL for the API call
+  const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=da83255d6fcd4f7a9fa206d35782da4c&page=${nextPage}&pageSize=${this.props.pageSize}`;
+
+  // Fetch data from the API
+  this.setState({ loading: true });
+  let data = await fetch(url);
+  let parseData = await data.json();
+  console.log(parseData);
+
+  // Update the articles state with the new data
+  this.setState((prevState) => ({
+    articles: [...prevState.articles, ...parseData.articles],
+    totalResults: parseData.totalResults,
+    loading: false,
+  }));
+};
+
   render() {
     return (
       <>
