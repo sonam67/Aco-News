@@ -28,7 +28,7 @@ export  class News extends Component {
     }
   }
   async updateNews(){
-    const url=`https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=da83255d6fcd4f7a9fa206d35782da4c &page=1&pageSize=${this.props.pageSize}`;
+    const url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=da83255d6fcd4f7a9fa206d35782da4c&page=1&pageSize=${this.props.pageSize}`;
     this.setState({loading: true})
     let data= await fetch(url);
     let parseData=await data.json()
