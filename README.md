@@ -1,6 +1,8 @@
 
 **Quick News**
+
 **Table of Contents**
+
 Introduction
 Features
 Technologies Used
