@@ -1,5 +1,5 @@
 
-**Quick News**
+**Aco News**
 
 **Table of Contents**
 
@@ -8,7 +8,7 @@ Features
 Technologies Used
 
 **Introduction**
-Quick News is a modern web application that provides the latest news from various sources in a user-friendly and responsive interface. Built using React.js, this project aims to deliver news articles quickly and efficiently, offering a seamless browsing experience.
+Aco News is a modern web application that provides the latest news from various sources in a user-friendly and responsive interface. Built using React.js, this project aims to deliver news articles quickly and efficiently, offering a seamless browsing experience.
 
 **Features**
 Real-time news updates
